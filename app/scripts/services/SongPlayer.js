@@ -3,7 +3,7 @@
     var SongPlayer = {};
 
     /**
-     * @desc Current song object
+     * @desc Current song object that holds metadata for audio file
      * @type {Object}
      */
 
