@@ -80,6 +80,12 @@ SongPlayer.currentTime = null;
 */
 SongPlayer.volume = 40;
 
+/**
+* @desc Mutes sound
+* @type {Object}
+*/
+SongPlayer.muted = false;
+
 
 SongPlayer.play = function(song) {
    song = song || SongPlayer.currentSong;
@@ -146,6 +152,24 @@ SongPlayer.setVolume = function(volume) {
     }
     SongPlayer.volume = volume
   };
+
+  /**
+  * @function setVolume
+  * @desc Allows user to mute sound of currently playing song
+  * @param {Object}
+  */
+
+  SongPlayer.toggleMute = function () {
+		if (SongPlayer.volume === 0) {
+				SongPlayer.muted = false;
+				SongPlayer.setVolume(SongPlayer.prevVolume);
+			} else {
+				// Previous volume to return to after un-muting
+				SongPlayer.prevVolume = SongPlayer.volume;
+				SongPlayer.muted = true;
+				SongPlayer.setVolume(0);
+			}
+		}
 
     return SongPlayer;
   }
