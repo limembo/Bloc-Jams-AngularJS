@@ -61,6 +61,7 @@
   };
 
 
+
  /**
   * @desc Current song object that holds metadata for audio file
   * @type {Object}
